@@ -132,10 +132,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openUrl(String url) {
-        // Abrir en WebView a pantalla completa
+        // Abrir en WebView a pantalla completa con animación lateral
         Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("url", url);
         startActivity(intent);
+        // Animación de deslizamiento desde la derecha
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     private static class Section {

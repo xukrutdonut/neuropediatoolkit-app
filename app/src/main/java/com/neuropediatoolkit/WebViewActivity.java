@@ -8,17 +8,15 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView webView;
-    private TextView pageTitle;
-    private ImageButton closeButton;
-    private ImageButton shareButton;
+    private FloatingActionButton closeButton;
+    private FloatingActionButton shareButton;
     private ProgressBar progressBar;
     private String currentUrl;
 
@@ -36,7 +34,6 @@ public class WebViewActivity extends AppCompatActivity {
 
         // Initialize views
         webView = findViewById(R.id.webView);
-        pageTitle = findViewById(R.id.pageTitle);
         closeButton = findViewById(R.id.closeButton);
         shareButton = findViewById(R.id.shareButton);
         progressBar = findViewById(R.id.progressBar);
@@ -99,14 +96,8 @@ public class WebViewActivity extends AppCompatActivity {
             }
         });
 
-        // WebChromeClient para título de página
+        // WebChromeClient para progreso de carga
         webView.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public void onReceivedTitle(WebView view, String title) {
-                super.onReceivedTitle(view, title);
-                pageTitle.setText(title);
-            }
-
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
@@ -119,7 +110,7 @@ public class WebViewActivity extends AppCompatActivity {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, currentUrl);
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, pageTitle.getText().toString());
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, webView.getTitle());
         startActivity(Intent.createChooser(shareIntent, "Compartir"));
     }
 
@@ -129,7 +120,16 @@ public class WebViewActivity extends AppCompatActivity {
             webView.goBack();
         } else {
             super.onBackPressed();
+            // Animación al cerrar (desliza hacia la derecha)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         }
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        // Animación al cerrar (desliza hacia la derecha)
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     @Override

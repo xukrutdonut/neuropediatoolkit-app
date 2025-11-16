@@ -1,67 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Barra superior personalizada -->
-    <LinearLayout
+    <!-- WebView a pantalla COMPLETA -->
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:background="@color/colorPrimary"
-        android:gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:elevation="4dp">
+        android:layout_height="match_parent" />
 
-        <ImageButton
-            android:id="@+id/closeButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
-            android:tint="#FFFFFF"
-            android:contentDescription="Cerrar" />
+    <!-- Botón flotante para cerrar (esquina superior izquierda) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#80000000"
+        android:contentDescription="Cerrar"
+        android:elevation="8dp"
+        app:fabSize="mini"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
 
-        <TextView
-            android:id="@+id/pageTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cargando..."
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:singleLine="true"
-            android:ellipsize="end"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+    <!-- Botón flotante para compartir (esquina superior derecha) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_share"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#80000000"
+        android:contentDescription="Compartir"
+        android:elevation="8dp"
+        android:visibility="gone"
+        app:fabSize="mini"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
 
-        <ImageButton
-            android:id="@+id/shareButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_share"
-            android:tint="#FFFFFF"
-            android:contentDescription="Compartir" />
-
-    </LinearLayout>
-
-    <!-- ProgressBar para indicar carga -->
+    <!-- ProgressBar en la parte superior -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         style="?android:attr/progressBarStyleHorizontal"
+        android:layout_gravity="top"
+        android:progressTint="@color/colorPrimary"
         android:visibility="gone" />
 
-    <!-- WebView a pantalla completa -->
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+</FrameLayout>
 
-</LinearLayout>
