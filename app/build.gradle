@@ -54,6 +54,9 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.3.1'
     
+    // Chrome Custom Tabs para mejor experiencia móvil
+    implementation 'androidx.browser:browser:1.5.0'
+    
     // Force consistent versions for lifecycle components
     implementation 'androidx.lifecycle:lifecycle-runtime:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.1'
