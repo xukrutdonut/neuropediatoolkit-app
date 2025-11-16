@@ -10,14 +10,34 @@ android {
         applicationId "com.neuropediatoolkit"
         minSdk 21
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0.0"
+    }
+
+    signingConfigs {
+        release {
+            // Configuración de firma para producción
+            // Descomentar y configurar cuando tengas el keystore:
+            /*
+            def keystorePropertiesFile = rootProject.file("keystore.properties")
+            def keystoreProperties = new Properties()
+            if (keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+            */
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Descomentar cuando tengas el keystore configurado:
+            // signingConfig signingConfigs.release
         }
     }
     
