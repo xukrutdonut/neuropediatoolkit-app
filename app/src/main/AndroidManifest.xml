@@ -18,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".PerimetroCefalicaActivity" />
         <activity android:name=".IndiceCefalometricoActivity" />
         <activity android:name=".DesarrolloPsicomotorActivity" />

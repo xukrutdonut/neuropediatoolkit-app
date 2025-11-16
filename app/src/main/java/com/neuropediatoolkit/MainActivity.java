@@ -1,7 +1,6 @@
 package com.neuropediatoolkit;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.browser.customtabs.CustomTabsIntent;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -135,32 +132,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openUrl(String url) {
-        try {
-            // Configurar Chrome Custom Tabs con colores de la app
-            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-            
-            // Color de la barra de herramientas (negro/gris oscuro)
-            builder.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimary));
-            
-            // Habilitar botón de compartir
-            builder.setShareState(CustomTabsIntent.SHARE_STATE_ON);
-            
-            // Mostrar título de la página
-            builder.setShowTitle(true);
-            
-            // Animaciones de entrada/salida
-            builder.setStartAnimations(this, android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-            builder.setExitAnimations(this, android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-            
-            CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.launchUrl(this, Uri.parse(url));
-            
-        } catch (Exception e) {
-            // Fallback al navegador normal si Custom Tabs no está disponible
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            startActivity(intent);
-        }
+        // Abrir en WebView a pantalla completa
+        Intent intent = new Intent(this, WebViewActivity.class);
+        intent.putExtra("url", url);
+        startActivity(intent);
     }
 
     private static class Section {
