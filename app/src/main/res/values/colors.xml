@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Twenty Nineteen WordPress Theme Colors -->
+    <color name="colorPrimary">#0073a8</color>
+    <color name="colorPrimaryDark">#005475</color>
+    <color name="colorAccent">#0073a8</color>
+    
+    <!-- Background colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="background">#FFFFFF</color>
+    
+    <!-- Text colors (Twenty Nineteen) -->
+    <color name="black">#111111</color>
+    <color name="dark_gray">#111111</color>
+    <color name="gray">#767676</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#767676</color>
+    
+    <!-- Dividers -->
+    <color name="divider">#CCCCCC</color>
+</resources>

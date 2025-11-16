@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeuropediaToolkit</string>
+    
+    <!-- Tool names -->
+    <string name="perimetro_cefalico">Perímetro Cefálico</string>
+    <string name="indice_cefalometrico">Índice Cefalométrico y Braquicefálico</string>
+    <string name="desarrollo_psicomotor">Desarrollo Psicomotor</string>
+    <string name="curvas_crecimiento">Curvas de Crecimiento</string>
+    <string name="calculadora_dosis">Calculadora de Dosis</string>
+    <string name="escalas_evaluacion">Escalas de Evaluación</string>
+    
+    <!-- Common strings -->
+    <string name="calcular">Calcular</string>
+    <string name="edad">Edad</string>
+    <string name="peso">Peso</string>
+    <string name="sexo">Sexo</string>
+    <string name="nino">Niño</string>
+    <string name="nina">Niña</string>
+    
+    <!-- Units -->
+    <string-array name="edad_unidades">
+        <item>Meses</item>
+        <item>Años</item>
+        <item>Días</item>
+    </string-array>
+    
+    <!-- Medications -->
+    <string-array name="medicamentos">
+        <item>Paracetamol</item>
+        <item>Ibuprofeno</item>
+        <item>Amoxicilina</item>
+        <item>Ácido Valproico</item>
+        <item>Levetiracetam</item>
+    </string-array>
+</resources>

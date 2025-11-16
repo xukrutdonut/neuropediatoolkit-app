@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Curvas de Crecimiento / IMC"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="20dp"
+            android:textColor="#1976D2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edad:"
+            android:textSize="16sp"
+            android:paddingTop="8dp" />
+
+        <EditText
+            android:id="@+id/edadInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Ingrese la edad" />
+
+        <Spinner
+            android:id="@+id/edadUnidadSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peso (kg):"
+            android:textSize="16sp"
+            android:paddingTop="16dp" />
+
+        <EditText
+            android:id="@+id/pesoInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Ingrese el peso en kg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Talla (cm):"
+            android:textSize="16sp"
+            android:paddingTop="16dp" />
+
+        <EditText
+            android:id="@+id/tallaInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Ingrese la talla en cm" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo:"
+            android:textSize="16sp"
+            android:paddingTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/sexoGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioNino"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Niño" />
+
+            <RadioButton
+                android:id="@+id/radioNina"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Niña" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calcularButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular IMC"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#1976D2" />
+
+        <TextView
+            android:id="@+id/resultadoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los resultados aparecerán aquí"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:layout_marginTop="20dp"
+            android:background="#E3F2FD"
+            android:minHeight="150dp" />
+
+    </LinearLayout>
+</ScrollView>
